@@ -1,0 +1,1091 @@
+/* ===== 기본 리셋 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', -apple-system, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #fff;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* ===== 컨테이너 ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== 상단 유틸리티 ===== */
+        .top-utility {
+            background: #0f2e5c;
+            color: white;
+            font-size: 0.8125rem;
+            padding: 8px 0;
+        }
+        
+        .top-utility-content {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .top-utility a {
+            color: white;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        
+        .top-utility a:hover {
+            opacity: 1;
+        }
+        
+        /* ===== 헤더 ===== */
+        .header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .header-main {
+            padding: 20px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #0f2e5c;
+        }
+        
+        .logo-sub {
+            font-size: 0.875rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .main-nav {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .main-nav a {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            padding: 10px 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .main-nav a:hover {
+            color: #0f2e5c;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #0f2e5c;
+            transition: width 0.3s;
+        }
+        
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+        
+        .header-apply {
+            background: #d4213d;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9375rem;
+            transition: all 0.3s;
+        }
+        
+        .header-apply:hover {
+            background: #b11d35;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 33, 61, 0.3);
+        }
+        
+        /* ===== 메인 비주얼 ===== */
+        .main-visual {
+            position: relative;
+            min-height: 600px;
+            background: linear-gradient(135deg, #0f2e5c 0%, #1a4d8f 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        .visual-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(30deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03)),
+                linear-gradient(150deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03));
+            background-size: 80px 140px;
+        }
+        
+        .visual-content {
+            position: relative;
+            z-index: 10;
+            color: white;
+        }
+        
+        .visual-badge {
+            display: inline-block;
+            background: rgba(212, 33, 61, 0.9);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+        }
+        
+        .visual-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .visual-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+        
+        .visual-problem {
+            background: rgba(255, 107, 53, 0.15);
+            border-left: 4px solid #ff6b35;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+            line-height: 1.8;
+        }
+        
+        .visual-solutions {
+            display: grid;
+            gap: 12px;
+            margin: 24px 0;
+        }
+        
+        .solution-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.0625rem;
+        }
+        
+        .solution-item::before {
+            content: '✓';
+            color: #ff6b35;
+            font-weight: 900;
+            font-size: 1.25rem;
+        }
+        
+        .visual-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 36px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-red {
+            background: #d4213d;
+            color: white;
+            box-shadow: 0 8px 24px rgba(212, 33, 61, 0.3);
+        }
+        
+        .btn-red:hover {
+            background: #b11d35;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(212, 33, 61, 0.4);
+        }
+        
+        .btn-white {
+            background: white;
+            color: #0f2e5c;
+            border: 2px solid white;
+        }
+        
+        .btn-white:hover {
+            background: transparent;
+            color: white;
+        }
+        
+        /* ===== 모집 안내 ===== */
+        .notice-section {
+            background: #f9fafb;
+            padding: 60px 0;
+        }
+        
+        .notice-box {
+            background: white;
+            border: 2px solid #0f2e5c;
+            border-radius: 12px;
+            padding: 40px;
+        }
+        
+        .notice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .notice-title {
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: #0f2e5c;
+        }
+        
+        .notice-badge {
+            background: #d4213d;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+        
+        .notice-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .notice-item {
+            text-align: center;
+        }
+        
+        .notice-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .notice-value {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #0f2e5c;
+        }
+        
+        .notice-value.red {
+            color: #d4213d;
+        }
+        
+        /* ===== 섹션 공통 ===== */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-eyebrow {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #0f2e5c;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 12px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #111;
+            margin-bottom: 16px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* ===== 스토리 섹션 ===== */
+        .story-section {
+            background: white;
+        }
+        
+        .story-layout {
+            display: grid;
+            grid-template-columns: 450px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .story-image-box {
+            position: relative;
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10rem;
+            box-shadow: 0 20px 60px rgba(15, 46, 92, 0.15);
+        }
+        
+        .story-content h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 24px;
+        }
+        
+        .story-quote {
+            background: #fef3f2;
+            border-left: 4px solid #d4213d;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+        
+        .story-quote strong {
+            color: #d4213d;
+        }
+        
+        .story-highlight {
+            background: #eff6ff;
+            border-left: 4px solid #0f2e5c;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 8px;
+        }
+        
+        .story-highlight strong {
+            color: #0f2e5c;
+            font-size: 1.125rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        /* ===== 프로그램 구조 ===== */
+        .structure-section {
+            background: #f9fafb;
+        }
+        
+        .structure-visual {
+            background: white;
+            border-radius: 16px;
+            padding: 60px;
+            margin: 40px 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .structure-formula {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .structure-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 3px solid #0f2e5c;
+            padding: 30px 40px;
+            border-radius: 12px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f2e5c;
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .structure-operator {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #d4213d;
+        }
+        
+        .structure-result {
+            background: linear-gradient(135deg, #0f2e5c 0%, #1a4d8f 100%);
+            color: white;
+            border: none;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            display: flex;
+            gap: 20px;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            border-color: #0f2e5c;
+            box-shadow: 0 8px 24px rgba(15, 46, 92, 0.1);
+            transform: translateY(-4px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-text {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: #111;
+        }
+        
+        /* ===== 커리큘럼 그리드 (8개 마이크로디그리) ===== */
+        .curriculum-section {
+            background: white;
+        }
+        
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .curriculum-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .curriculum-card:hover {
+            border-color: #0f2e5c;
+            box-shadow: 0 12px 40px rgba(15, 46, 92, 0.12);
+            transform: translateY(-6px);
+        }
+        
+        .curriculum-header {
+            background: linear-gradient(135deg, #0f2e5c 0%, #1a4d8f 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .curriculum-icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+        
+        .curriculum-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .curriculum-body {
+            padding: 24px;
+        }
+        
+        .curriculum-desc {
+            font-size: 0.9375rem;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+        
+        .curriculum-target {
+            font-size: 0.875rem;
+            color: #d4213d;
+            font-weight: 600;
+            padding: 12px;
+            background: #fef3f2;
+            border-radius: 8px;
+        }
+        
+        /* ===== 장학금 섹션 ===== */
+        .scholarship-section {
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        }
+        
+        .scholarship-visual {
+            background: white;
+            border: 3px solid #0f2e5c;
+            border-radius: 16px;
+            padding: 50px;
+            margin: 40px auto;
+            max-width: 800px;
+            box-shadow: 0 12px 40px rgba(15, 46, 92, 0.1);
+        }
+        
+        .scholarship-formula {
+            display: grid;
+            gap: 24px;
+        }
+        
+        .scholarship-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 12px;
+        }
+        
+        .scholarship-label {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #0f2e5c;
+        }
+        
+        .scholarship-amount {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #d4213d;
+        }
+        
+        .scholarship-total {
+            background: linear-gradient(135deg, #0f2e5c 0%, #1a4d8f 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .scholarship-total-label {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        
+        .scholarship-total-amount {
+            font-size: 3rem;
+            font-weight: 900;
+        }
+        
+        /* ===== 취업지원 섹션 ===== */
+        .career-section {
+            background: #f9fafb;
+        }
+        
+        .career-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+        
+        .career-intro strong {
+            color: #0f2e5c;
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .career-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s;
+        }
+        
+        .career-card:hover {
+            border-color: #0f2e5c;
+            box-shadow: 0 8px 24px rgba(15, 46, 92, 0.1);
+        }
+        
+        .career-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .career-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 12px;
+        }
+        
+        .career-card-desc {
+            font-size: 0.9375rem;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+        
+        /* ===== 합격자 리뷰 ===== */
+        .review-section {
+            background: white;
+        }
+        
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .review-card {
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .review-card:hover {
+            border-color: #0f2e5c;
+            box-shadow: 0 12px 40px rgba(15, 46, 92, 0.12);
+            transform: translateY(-6px);
+        }
+        
+        .review-avatar {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+        
+        .review-name {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 8px;
+        }
+        
+        .review-school {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+        
+        .review-company {
+            background: #0f2e5c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+        
+        .review-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #0f2e5c;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            transition: all 0.3s;
+        }
+        
+        .review-card:hover .review-btn {
+            transform: translateX(4px);
+        }
+        
+        /* ===== 비교과 섹션 ===== */
+        .extracurricular-section {
+            background: #f9fafb;
+        }
+        
+        .extra-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+        
+        .extra-intro p {
+            font-size: 1.0625rem;
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        
+        .extra-highlight {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 4px solid #0f2e5c;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .extra-highlight strong {
+            color: #0f2e5c;
+            font-size: 1.25rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+        
+        /* ===== 최종 CTA 섹션 ===== */
+        .final-cta-section {
+            background: linear-gradient(135deg, #0f2e5c 0%, #1a4d8f 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+        }
+        
+        .final-cta-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+        
+        .final-cta-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+        
+        .final-cta-subtitle {
+            font-size: 1.375rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .final-cta-benefits {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        
+        .benefit-list {
+            display: grid;
+            gap: 16px;
+            text-align: left;
+        }
+        
+        .benefit-list-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.125rem;
+        }
+        
+        .benefit-list-item::before {
+            content: '✓';
+            color: #ff6b35;
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+        
+        .final-notice-box {
+            background: white;
+            color: #111;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 600px;
+        }
+        
+        .final-notice-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d4213d;
+            margin-bottom: 16px;
+        }
+        
+        .final-notice-grid {
+            display: grid;
+            gap: 12px;
+            text-align: left;
+        }
+        
+        .final-notice-item {
+            font-size: 1rem;
+            color: #4b5563;
+        }
+        
+        .final-notice-item strong {
+            color: #111;
+            font-weight: 700;
+        }
+        
+        .final-cta-message {
+            font-size: 1.25rem;
+            margin: 40px 0 30px;
+            font-weight: 600;
+        }
+        
+        .btn-large {
+            padding: 20px 48px;
+            font-size: 1.25rem;
+        }
+        
+        /* ===== 푸터 ===== */
+        .footer {
+            background: #1f2937;
+            color: #9ca3af;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section p {
+            font-size: 0.9375rem;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            font-size: 0.875rem;
+        }
+        
+        /* ===== 플로팅 바 ===== */
+        .floating-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(212, 33, 61, 0.97);
+            backdrop-filter: blur(20px);
+            padding: 16px 0;
+            z-index: 999;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .floating-bar.show {
+            transform: translateY(0);
+        }
+        
+        .floating-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .floating-text {
+            color: white;
+        }
+        
+        .floating-text strong {
+            font-size: 1.125rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .floating-text span {
+            font-size: 0.875rem;
+            opacity: 0.95;
+        }
+        
+        .floating-bar .btn {
+            background: white;
+            color: #d4213d;
+        }
+        
+        /* ===== 반응형 ===== */
+        @media (max-width: 1024px) {
+            .story-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .story-image-box {
+                max-width: 450px;
+                margin: 0 auto;
+            }
+            
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-utility {
+                display: none;
+            }
+            
+            .main-nav {
+                display: none;
+            }
+            
+            .logo-area {
+                flex-direction: column;
+                gap: 4px;
+            }
+            
+            .main-visual {
+                min-height: auto;
+                padding: 80px 0;
+            }
+            
+            .visual-title {
+                font-size: 2rem;
+            }
+            
+            .visual-subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .visual-buttons {
+                flex-direction: column;
+            }
+            
+            .notice-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .structure-formula {
+                flex-direction: column;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .curriculum-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .final-cta-title {
+                font-size: 2rem;
+            }
+            
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .floating-content {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
